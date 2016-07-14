@@ -1,0 +1,18 @@
+#txtExcel {
+	position:absolute;
+	top:10%;
+	left:10%;
+	height:70%;
+	width:50%;
+}
+
+#btnSubmit {
+	position:absolute;
+	top:15%;
+	left:65%;
+}
+
+#form1 {
+	height:100%;
+	width:100%;
+}
