@@ -1,3 +1,4 @@
+/* posizione e dimensioni della textarea */
 #txtExcel {
 	position:absolute;
 	top:10%;
@@ -6,12 +7,14 @@
 	width:50%;
 }
 
-#btnSubmit {
+/* posizione del bottone */
+#btnExcel {
 	position:absolute;
 	top:15%;
 	left:65%;
 }
 
+/* dimensioni form */
 #form1 {
 	height:100%;
 	width:100%;
