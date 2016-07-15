@@ -44,7 +44,7 @@
 
         <!--- tag che gestiscono il download del file appena creato --->
         <cfheader name="Content-Disposition" value="attachment; filename=#nomeFile#">  
-        <cfcontent type="application/msexcel" file="#pathCartella#\#nomeFile#"> 
-        
+        <cfcontent type="application/msexcel" file="#pathCartella#\#nomeFile#" deleteFile="yes"> 
+
     </cffunction>
 </cfcomponent>
