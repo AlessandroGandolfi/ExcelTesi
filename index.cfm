@@ -1,9 +1,11 @@
     <body>
-        <cfform name="form1" action="gestione.cfm">
+        <form name="form1" action="gestione.cfm" method="POST" enctype="multipart/form-data">
             <!--- textarea in cui viene inserito il testo da esportare su excel --->
             <textarea id="txtExcel" name="txtExcel"></textarea>
             <!--- bottone per fare il submit della stringa e avviare la funzione di creazione del file excel --->
-            <cfinput type="submit" id="btnExcel" name="btnExcel" value="Crea file excel"></cfinput>
-        </cfform>
+            <input type="submit" id="btnExcel" name="btnExcel" value="Crea file excel">
+            
+            <input type="file" name="fileUploadExcel" id="fileUploadExcel" size="30">
+        </form>
     </body>
 </html>

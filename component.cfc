@@ -47,4 +47,23 @@
         <cfcontent type="application/msexcel" file="#pathCartella#\#nomeFile#" deleteFile="yes"> 
 
     </cffunction>
+
+    <!--- funzione per ricavare la stringa dal file caricato, in seguito richiama la funzione principale --->
+    <cffunction name="getFileString" access="remote">
+        <!--- salvataggio idel file nella cartella temporanea da cui si può ricavare il full path, 
+        per motivi di sicurezza non si può ricavare il path originale del file caricato --->
+        <cffile action="upload" filefield="fileUploadExcel" destination="#pathCartella#" nameConflict="overwrite">
+        <!--- file caricato e salvataggio del testo all'interno in una stringa --->
+        <cfset fileCaricato = "#GetFileFromPath(fullPath)#">
+        <cfset stringaLog = "#FileRead(fileCaricato)#">
+        <!--- cancello il file da dove ho preso la stringa --->
+        <cffile action="delete" file="#fullPath#">
+        
+        <!--- richiamo della funzione principale, i parametri sono la stringa ricavata dal file e il path della cartella --->
+        <cfinvoke method="convertToExcel">
+            <cfinvokeargument name="stringaInserita" value="#stringaLog#">
+            <cfinvokeargument name="pathCartella" value="#pathCartella#">
+        </cfinvoke>
+    </cffunction>
+
 </cfcomponent>

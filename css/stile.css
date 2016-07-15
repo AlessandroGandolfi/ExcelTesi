@@ -3,9 +3,16 @@
 	position:absolute;
 	top:10%;
 	left:10%;
-	height:70%;
+	height:50%;
 	width:50%;
 	resize:none;
+}
+
+/* posizione del campo per l'upload dei file */
+#fileUploadExcel {
+	position:absolute;
+	top:70%;
+	left:10%;
 }
 
 /* posizione del bottone */
